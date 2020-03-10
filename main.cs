@@ -7,8 +7,7 @@ namespace koronaOke {
 
         static void Main (string[] args) {
             
-            string firstRegionInfected;
-            int timeNow = Console.ReadLine.ToInt32();
+            int timeNow = 100;
             List<Region> Regions = new List<Region>();
 
             List<Connection> Connections = new List<Connection>();
@@ -22,18 +21,18 @@ namespace koronaOke {
                 
                 Connection currentCon = regConnection.Dequeue();
 
-                if (S(currentCon, timeNow) > 1) {
+                if (Connection.S(currentCon, timeNow) > 1) {
 
                     if (currentCon.target.isInfected) {
 
-                        if (currentCon.target.timeSinceFirstInfected > S(regConnection)) {
-                            currentCon.target.timeSinceFirstInfected = S(regConnection);
+                        if (currentCon.target.timeSinceFirstInfected > Connection.S(currentCon)) {
+                            currentCon.target.timeSinceFirstInfected = Connection.S(currentCon);
                         }
 
                     }
                     else {
                         currentCon.target.isInfected = true;
-                        currentCon.target.timeSinceFirstInfected = S(regConnection);
+                        currentCon.target.timeSinceFirstInfected = Connection.S(currentCon);
                     }
 
                     currentCon.hasBeenExecuted = true;
@@ -50,7 +49,7 @@ namespace koronaOke {
 
                 }
 
-            } while (regConnection.count > 0);
+            } while (regConnection.Count > 0);
             
 
 

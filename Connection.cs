@@ -7,11 +7,13 @@ namespace koronaOke {
         public Region origin;
         public Region target;
         public double transferRate;
+        public boolean hasBeenExecuted;
 
         public Connection(Region A, Region B, double rate) {
             origin = A;
             target = B;
             transferRate = rate;
+            hasBeenExecuted = false;
         }
 
         static double S (Connection c, int timeNow) { // To determine if a region can be infected by other region

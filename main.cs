@@ -13,6 +13,7 @@ namespace koronaOke {
 
             Queue<Connection> queueConnection = new Queue<Connection>();
 
+            Console.Write("T : ");
             int timeNow = Convert.ToInt32(Console.ReadLine());
 
             // Get First Infected Region and their neighbours to be pushed into queue

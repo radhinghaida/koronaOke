@@ -12,6 +12,14 @@ namespace koronaOke {
 
         public List<Region> ConnectedTo = new List<Region>(); // Berhasil memek
 
+        public Region()
+        {
+            population = 0;
+            regionName = "noName";
+            isInfected = false;
+            timeSinceFirstInfected = 0;
+        }
+
         public Region(string region ,int setPopulation , bool defaultInfected = false) {
 
             population = setPopulation;

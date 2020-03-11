@@ -32,8 +32,8 @@ namespace koronaOke {
         public static double Infected(Region origin, int timeNow) {
             int pA = origin.population;
             int timeHasBeenInfected = timeNow - origin.timeSinceFirstInfected;
-            double res = (pA) / (1 + (pA - 1) * (Math.Exp((-1) * (0.25) * timeHasBeenInfected)));
-            // double res = timeHasBeenInfected * pA / 20;
+            //double res = (pA) / (1 + (pA - 1) * (Math.Exp((-1) * (0.25) * timeHasBeenInfected)));
+            double res = timeHasBeenInfected * pA / 20;
             return res;
         }
 

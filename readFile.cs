@@ -33,10 +33,11 @@ namespace koronaOke
                 string[] lineDibaca = lines[i].Split(' ');
                 string namaRegion = lineDibaca[0].Trim();
                 int populasi = int.Parse(lineDibaca[1].Trim());
-                bool isInfected = (namaRegion == firstInfected);
+                bool isInfected = (string.Compare(namaRegion, firstInfected) == 0) ? true : false;
                 Region Baru = new Region(namaRegion, populasi, isInfected);
                 Regions.Add(Baru);
                 // TIME SINCE FIRST INFECTED BUAT YANG PERTAMA INFECTED GIMANA YAH
+                // TIME SINCE FIRST INFECTED buat yang pertama bikin 0 juga, tapi  isInfected nya jadi true
             }
             return Regions;
         }

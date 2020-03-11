@@ -17,13 +17,12 @@ namespace koronaOke {
         }
 
         public static double S (Connection c, int timeNow) { // To determine if a region can be infected by other region
-            int tOrigin = timeNow - c.origin.timeSinceFirstInfected;
-            return Region.Infected(c.origin,tOrigin) * c.transferRate;
+            return Region.Infected(c.origin,timeNow) * c.transferRate;
 
         }
 
         public static int S (Connection c) {
-            double tInDouble =  20 / (c.origin.population * c.transferRate);
+            double tInDouble =  Math.Floor(20 / (c.origin.population * c.transferRate));
             int t = (int) tInDouble;
             t += (1 + c.origin.timeSinceFirstInfected);
             return t; 

@@ -10,7 +10,6 @@ namespace koronaOke {
         public bool isInfected {get; set;}
         public int timeSinceFirstInfected {get; set;}
 
-        public List<Region> ConnectedTo = new List<Region>(); // Berhasil memek
 
         public Region()
         {

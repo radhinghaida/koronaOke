@@ -34,14 +34,6 @@ namespace koronaOke {
             }
 
 
-            // Testing part
-            foreach (Region aReg in Regions) {
-                Console.WriteLine("Region {0} with population {1} and infected status {2}", aReg.regionName, aReg.population, aReg.isInfected);
-            }
-
-            // End of testing part
-
-
             do {
                 
                 Console.WriteLine("Queue Status :");
@@ -93,16 +85,7 @@ namespace koronaOke {
 
             } while (queueConnection.Count > 0);
 
-
-
-            // Testing Part
-            foreach (Connection aCon in Connections) {
-                Console.WriteLine("Connection from {0} to {1} with Rate {2} and statExe : {3}", aCon.origin.regionName, aCon.target.regionName, aCon.transferRate, aCon.hasBeenExecuted);
-            }
             Console.WriteLine("");
-            // End of Testing Part
-
-
 
             foreach(Region aRegion in Regions) {
                 
@@ -110,7 +93,7 @@ namespace koronaOke {
                     Console.WriteLine("Region : {0} has been infected since day {1}", aRegion.regionName, aRegion.timeSinceFirstInfected);
                 }
                 else {
-                    Console.WriteLine("Region : {0} is safe, testing T({0}) : {1}", aRegion.regionName, aRegion.timeSinceFirstInfected);
+                    Console.WriteLine("Region : {0} is safe,  T({0}) : {1}", aRegion.regionName, aRegion.timeSinceFirstInfected);
                 }
 
             }

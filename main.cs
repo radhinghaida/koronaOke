@@ -47,8 +47,9 @@ namespace koronaOke {
                 Connection currentCon = queueConnection.Dequeue();
                 // Test for Dequeue
                 //Console.WriteLine("Dequeue Connection from {0} to {1} with status has been Exe : {3}", currentCon.origin, currentCon.target, currentCon.hasBeenExecuted);
-                Console.WriteLine("Success from {0} to {1}", currentCon.origin.regionName, currentCon.target.regionName);
+                Console.WriteLine("Checking from {0} to {1}", currentCon.origin.regionName, currentCon.target.regionName);
                 Console.WriteLine("Success Rate : {0}", Connection.S(currentCon,timeNow));
+                Console.WriteLine("");
                 
 
                 // End of Test
